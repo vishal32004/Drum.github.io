@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@1,600&display=swap');
+
+
+body {
+  text-align: center;
+  background-color: #283149;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 5rem;
+  color: #DBEDF3;
+  font-family: "Arvo", cursive;
+  text-shadow: 3px 0 #DA0463;
+
+}
+
+footer {
+  color: #DBEDF3;
+  font-family: sans-serif;
+}
+
+.w {
+  background-image: url(images/sanji.jpg);
+  background-size: 100% 100%;
+}
+
+.a {
+  background-image: url(images/chopper.jpg);
+  background-size: 100% 100%;
+}
+
+.s {
+  background-image: url(images/Jimbei.jpg);
+  background-size: 100% 100%;
+}
+
+.d {
+  background-image: url(images/Luffy.jpg);
+  background-size: 100% 100%;
+}
+
+.j {
+  background-image: url(images/zoro.jpg);
+  background-size: 100% 100%;
+}
+
+.k {
+  background-image: url(images/Brook.jpg);
+  background-size: 100% 100%;
+}
+
+.l {
+  background-image: url(images/usopp.jpg);
+  background-size: 100% 100%;
+}
+
+.set {
+  margin: 10% auto;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.pressed {
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.5;
+}
+
+.red {
+  color: red;
+}
+
+.drum {
+  outline: none;
+  border: 10px solid #404B69;
+  font-size: 5rem;
+  font-family: 'Arvo', cursive;
+  line-height: 2;
+  font-weight: 900;
+  color: #DA0463;
+  text-shadow: 3px 0 #DBEDF3;
+  border-radius: 15px;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  margin: 10px;
+  background-color: white;
+  text-indent: -9999px;
+}
+
+.letter {
+  font-family: 'Open Sans', sans-serif;
+  display: inline-block;
+  width: 150px;
+  margin: 0 10px;
+  line-height: 2;
+  background-color: Transparent;
+  border: none;
+  overflow: hidden;
+  outline: none;
+  pointer-events: none;
+}
+
+
+
+
+
+/* Bubble Animation */
+
+.bubbles {
+  position: absolute;
+  bottom: -100px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  z-index: -9999;
+}
+
+.bubbles span {
+  height: 60px;
+  width: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
+  animation: move 10s linear infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes move {
+  100% {
+    transform: translateY(-90vh);
+  }
+}
+
+.bubbles span.one {
+  animation-delay: 2.2s;
+  transform: scale(2);
+}
+
+.bubbles span.two {
+  animation-delay: 3.5s;
+  transform: scale(1.85);
+}
+
+.bubbles span.three {
+  animation-delay: 0.2s;
+  transform: scale(0.26);
+}
+
+.bubbles span.four {
+  animation-delay: 5s;
+  transform: scale(2.15);
+}
+
+.bubbles span.five {
+  animation-delay: 6.5s;
+  transform: scale(1);
+}
+
+.bubbles span.six {
+  animation-delay: 4s;
+  transform: scale(2.5);
+}
+
+.bubbles span.seven {
+  animation-delay: 2.9s;
+  transform: scale(1.5);
+}
+
+.bubbles span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 40%;
+  transform: skew(45deg) translateX(150px);
+  background: rgba(255, 255, 255, 0.15);
+  animation: mirror 3s linear infinite;
+}
+
+@keyframes mirror {
+  100% {
+    transform: translateX(-450px);
+  }
+}
+
+.bubbles span.one:before {
+animation-delay: 1.5s;
+}
+
+.bubbles span.two:before {
+  animation-delay: 3.5s;
+}
+
+.bubbles span.three:before {
+  animation-delay: 2.5s;
+}
+
+.bubbles span.four:before {
+  animation-delay: 4.5s;
+}
+
+.bubbles span.five:before {
+  animation-delay: 1s;
+}
+
+.bubbles span.six:before {
+  animation-delay: 0.5s;
+}
+
+.bubbles span.seven:before {
+  animation-delay: 5s;
+}
+
+
+/* Almighty ACE */
+
+.bg-animation-box {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+  z-index: -1;
+}
+.bg-animation-box li {
+	position: fixed;
+	display: block;
+	list-style: none;
+	width: 25px;
+	height: 25px;
+	background: rgba(255, 255, 255, 0.2);
+	animation: bg-animate-01 20s linear infinite;
+	bottom: -150px;
+}
+
+.bg-animation-box li.circle-box {
+	border-radius: 50%;
+}
+
+.bg-animation-box li.corners-box-20 {
+	border-radius: 20%;
+}
+
+.bg-animation-box li.corners-box-35 {
+	border-radius: 35%;
+}
+
+.bg-animation-box li:nth-child(1) {
+	left: 4%;
+	width: 80px;
+	height: 80px;
+	animation-delay: 0s;
+}
+.bg-animation-box li:nth-child(2) {
+	left: 12%;
+	width: 30px;
+	height: 30px;
+	animation-delay: 1.5s;
+	animation-duration: 10s;
+}
+.bg-animation-box li:nth-child(3) {
+	left: 18%;
+	width: 100px;
+	height: 100px;
+	animation-delay: 5.5s;
+}
+.bg-animation-box li:nth-child(4) {
+	left: 35%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 0s;
+	animation-duration: 15s;
+}
+.bg-animation-box li:nth-child(5) {
+	left: 43%;
+	width: 40px;
+	height: 40px;
+	animation-delay: 0s;
+}
+.bg-animation-box li:nth-child(6) {
+	left: 60%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 3.5s;
+}
+.bg-animation-box li:nth-child(7) {
+	left: 70%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 6.5s;
+}
+
+.bg-animation-box li:nth-child(8) {
+	left: 95%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 1.5s;
+}
+
+@keyframes bg-animate-01 {
+	0% {
+		transform: translateY(0) rotate(0deg);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-800px) rotate(360deg);
+		opacity: 0;
+	}
+}
+
+
+/* media Queries  */
+/* Display letters container only on desktop */
+@media screen and (max-width: 1301px) {
+  .letter-container {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .letter-container {
+    display: none;
+  }
+
+  h1 {
+    font-size: 35px;
+    padding-bottom: 15px;
+    font-family: 'Work Sans', sans-serif;
+  }
+  
+
+  .set {
+    display: grid;
+    margin: 0;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    justify-items: center;
+    gap: 10px;
+  }
+
+  .l {
+    grid-column: span 2;
+  }
+
+  .drum {
+    width: 150px;
+    height: 150px;
+  }
+
+  .bubbles span {
+    bottom: -150px;
+  }
+}
